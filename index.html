@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#080812"><title>SHADOWCONSOLE — 500 Game Arcade</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#"><span class="brand-mark">S</span> SHADOW<span>CONSOLE</span></a>
+  <div class="top-right"><span id="connectionStatus" class="status">● OFFLINE</span><span class="library-count">500 GAMES</span></div>
+</header>
+<main>
+  <section class="hero">
+    <div class="eyebrow">YOUR PERSONAL ARCADE UNIVERSE</div>
+    <h1>500 GAMES.<br><span>ONE CONSOLE.</span></h1>
+    <p>Pick a game, connect your phone controller, and play.</p>
+    <div class="hero-stats"><span><b>500</b> ARCADE GAMES</span><span><b>10</b> GAME STYLES</span><span><b>1</b> PHONE CONTROLLER</span></div>
+  </section>
+
+  <section class="connect panel">
+    <div class="connect-title"><div><div class="kicker">WIRELESS CONTROLLER</div><h2>Connect your phone</h2></div><span class="pill">PC + MOBILE</span></div>
+    <div class="connect-grid">
+      <div><label>PC / LAPTOP HOST</label><button class="primary-btn" id="createRoom">CREATE ROOM</button><div class="code-row"><span id="roomCode">------</span><button id="copyCode" class="sub-btn">COPY</button></div><small>Open this site on your PC and keep it running.</small></div>
+      <div><label>PHONE CONTROLLER</label><input id="connectCode" placeholder="Enter PC room code" maxlength="30"><button class="secondary-btn" id="connectBtn">CONNECT PHONE</button><small>Enter the code shown on your PC.</small></div>
+    </div>
+  </section>
+
+  <section class="library">
+    <div class="library-heading"><div><div class="kicker">THE GAME VAULT</div><h2>Choose your game</h2></div><div class="game-total"><strong id="visibleCount">500</strong><small>GAMES SHOWN</small></div></div>
+    <div class="tools"><input id="searchInput" type="search" placeholder="Search 500 games..."><select id="categoryFilter"><option value="All">All categories</option></select><select id="sortFilter"><option value="popular">Popular</option><option value="az">Name: A–Z</option><option value="za">Name: Z–A</option></select></div>
+    <div class="category-chips" id="categoryChips"></div>
+    <div id="gameGrid" class="game-grid"></div>
+    <div class="pagination"><button id="prevPage" class="sub-btn">← PREVIOUS</button><span id="pageLabel">PAGE 1 / 25</span><button id="nextPage" class="sub-btn">NEXT →</button></div>
+  </section>
+
+  <section class="play-panel panel" id="playPanel">
+    <div class="play-head"><div><div class="kicker">NOW PLAYING</div><h2 id="playingTitle">Select a game from the vault</h2></div><button id="closeGame" class="sub-btn">CLOSE GAME</button></div>
+    <div class="play-layout"><div class="canvas-wrap"><canvas id="gameCanvas" width="900" height="500"></canvas><div id="gameStartOverlay" class="game-overlay"><div class="big-icon">✦</div><h3>READY PLAYER?</h3><p>Choose any title above to start playing.</p></div></div>
+      <aside class="game-info"><div class="kicker">HOW TO PLAY</div><p id="gameInstructions">Select a game to see its controls.</p><div class="score-box"><small>SCORE</small><strong id="scoreValue">0</strong></div><button id="restartGame" class="primary-btn">RESTART GAME</button><p class="muted">Keyboard: WASD / Arrow keys / Space. Phone: connect the controller above.</p></aside></div>
+  </section>
+
+  <section class="mobile-pad panel" id="mobilePad">
+    <div class="kicker">MOBILE GAMEPAD</div><h2>Shadow Pad</h2>
+    <div class="pad-layout"><div class="dpad"><button data-key="up">▲</button><button data-key="left">◀</button><button class="pad-mid" disabled>✦</button><button data-key="right">▶</button><button data-key="down">▼</button></div><div class="actions"><button data-key="x">X</button><button data-key="y">Y</button><button data-key="a">A</button><button data-key="b">B</button></div></div>
+  </section>
+</main>
+<footer>SHADOWCONSOLE <span>— 500 GAMES, ENDLESS PLAY</span></footer>
+<script src="game.js"></script>
+</body></html>
